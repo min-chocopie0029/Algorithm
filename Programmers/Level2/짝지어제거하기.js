@@ -1,15 +1,10 @@
 function solution(s) {
-  let i = 0;
-  let arr = [];
-
-  for(i =0 ; i<s.length;i++){
-    arr.push(s[i]);
-
-    if(arr[arr.length-1] == arr[arr.length-2]) {
-      arr.pop();
-      arr.pop();
-    }
+  let array = [];
+  
+  for (let i = 0; i < s.length; i++) {
+    if (array.length == 0 || s[i] != array[array.length-1]) array.push(s[i]);
+    else array.pop();
   }
   
-  return arr == "" ? 1 : 0 ;
+  return array.length ? 0 : 1;
 }
